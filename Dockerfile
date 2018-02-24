@@ -23,8 +23,6 @@ WORKDIR $BP
 
 ADD ./assets/wait-for /wait-for
 
-RUN go get -v -t ./...
-
 # cache yarn packages to an offline mirror so they're faster to load. hopefully.
 RUN grep -v '{{' $BP/generators/assets/webpack/templates/package.json.tmpl > package.json
 RUN yarn install --no-progress
