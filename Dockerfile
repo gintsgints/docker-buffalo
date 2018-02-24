@@ -21,7 +21,7 @@ RUN go get -u -v github.com/gobuffalo/buffalo/buffalo
 ENV BP=$GOPATH/src/github.com/gobuffalo/buffalo
 WORKDIR $BP
 
-ADD ./assets/wait-for.sh /wait-for.sh
+ADD ./assets/wait-for /wait-for
 
 RUN go get -v -t ./...
 
